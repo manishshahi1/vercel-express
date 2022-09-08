@@ -20,10 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/savedata", (req,res) =>{
-    fs.writeFile('config/data.json', data, (err) => {
-        if (err) throw err;
-        res.send("saved")
-    });
+    res.send("hello");
 })
 
 // Initialize server
