@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.send("Express on Vercel");
 });
 
-app.post("/savedata", (req,res) =>{
+app.get("/savedata", (req,res) =>{
     fs.writeFile('config/data.json', data, (err) => {
         if (err) throw err;
         res.send("saved")
