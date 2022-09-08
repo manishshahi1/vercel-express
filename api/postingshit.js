@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const router = express.Router();
 router.use(bodyParser.json());
 
-router.post("/postingshit", (req, res, next) => {
+router.get("/postingshit", (req, res, next) => {
   try {
     fs.readFile("./config/blogConfig.json", function (err, data) {
       if (err) throw err;
