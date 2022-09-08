@@ -1,19 +1,14 @@
 const express = require("express");
-const fs = require("fs");
+const jsonfile = require("jsonfile");
 const bodyParser = require("body-parser");
 const router = express.Router();
 router.use(bodyParser.json());
 
 router.get("/postingshit", (req, res, next) => {
-  try {
-    fs.readFile("blogConfig.json", function (err, data) {
-      if (err) throw err;
-      console.log(data);
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).send("server error");
-  }
+    const file = 'blogConfig.json'
+    jsonfile.readFile(file)
+    .then(obj => console.dir(obj))
+    .catch(error => console.error(error))
 });
 
 module.exports = router;
