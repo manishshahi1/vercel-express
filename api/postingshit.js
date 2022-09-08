@@ -5,7 +5,7 @@ const router = express.Router();
 router.use(bodyParser.json());
 
 router.get("/postingshit", (req, res, next) => {
-    const file = 'blogConfig.json'
+    const file = '/data/blogConfig.json'
     jsonfile.readFile(file)
     .then(obj => console.dir(obj))
     .catch(error => console.error(error))
