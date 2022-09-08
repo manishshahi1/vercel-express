@@ -6,7 +6,7 @@ router.use(bodyParser.json());
 
 router.get("/postingshit", (req, res, next) => {
   try {
-    fs.readFile("./config/blogConfig.json", function (err, data) {
+    fs.readFile("config/blogConfig.json", function (err, data) {
       if (err) throw err;
       console.log(data);
     });
