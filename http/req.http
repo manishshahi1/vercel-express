@@ -1,0 +1,5 @@
+POST http://localhost:8000/api/postingshit    HTTP/1.1
+Content-Type: application/json
+
+# GET http://localhost:8000/api/install/hello    HTTP/1.1
+# Content-Type: application/json

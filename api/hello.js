@@ -3,7 +3,8 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const router = express.Router();
 router.use(bodyParser.json());
-router.get("/install", async (req,res,next) => {
+
+router.get("/hello", async (req,res,next) => {
     try{
         res.json({
             status: 200,
@@ -14,5 +15,7 @@ router.get("/install", async (req,res,next) => {
         return res.status(500).send("server error");
     }
 })
+
+
 
 module.exports = router;
