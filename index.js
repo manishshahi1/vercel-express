@@ -1,3 +1,4 @@
+"use strict";
 // Add Express
 const express = require("express");
 const fs = require("fs");
@@ -28,6 +29,15 @@ app.get("/savedata", (req, res, next) => {
 
   console.log("This is after the write call");
   next();
+});
+
+app.get("/readfile", (req, res, next) => {
+  fs.readFile("student-3.json", (err, data) => {
+    if (err) throw err;
+    let studentz = JSON.parse(data);
+    console.log(studentz);
+    res.send(studentz)
+  });
 });
 
 // Initialize server
